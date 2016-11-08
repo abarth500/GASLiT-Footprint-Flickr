@@ -1,0 +1,13 @@
+
+# Created by https://www.gitignore.io/api/visualstudiocode,typings
+
+### VisualStudioCode ###
+.vscode/*
+jsconfig.json
+
+### Typings ###
+## Ignore downloaded typings
+typings
+typings.json
+
+.gitignore
