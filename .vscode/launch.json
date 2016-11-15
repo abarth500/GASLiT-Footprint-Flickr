@@ -3,13 +3,18 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
-        {
+    "configurations": [{
             "type": "node",
             "request": "launch",
             "name": "プログラムの起動",
-            "program": "${workspaceRoot}\\index.js",
-            "cwd": "${workspaceRoot}"
+            "program": "${workspaceRoot}\\bin\\execute.js",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                "-q",
+                "Wisky!Wine!Beer!Sake",
+                "-g",
+                "1"
+            ]
         },
         {
             "type": "node",

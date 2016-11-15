@@ -1,6 +1,7 @@
 
 # Created by https://www.gitignore.io/api/visualstudiocode,typings
 
+
 ### VisualStudioCode ###
 .vscode/*
 jsconfig.json
@@ -11,3 +12,10 @@ typings
 typings.json
 
 .gitignore
+.git/*
+
+### Node Modules ###
+node_modules/*
+data/*
+
+api-key.json

@@ -1,11 +1,21 @@
 {
-  "name": "gaslit-footprint-flickr",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "node index.js"
-  },
-  "author": "Shohei Yokoyama",
-  "license": "MIT"
+    "name": "gaslit-footprint-flickr",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "node index.js"
+    },
+    "author": "Shohei Yokoyama",
+    "license": "MIT",
+    "bin":{
+      "gaslit-footprint-flickr":"./bin/execute.js"
+    },
+    "dependencies": {
+        "async": "^2.1.2",
+        "flickrapi": "^0.6.0",
+        "node-callback": "^1.2.0",
+        "pngjs": "^3.0.0",
+        "posix-argv-parser": "^2.0.0"
+    }
 }
