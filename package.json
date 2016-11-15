@@ -1,15 +1,20 @@
 {
     "name": "gaslit-footprint-flickr",
+    "description": "Crawling geotagged photographs from Flickr and drawing a world map.",
     "version": "0.0.1",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "node index.js"
+        "test": "node index.js -q Wisky!Wine!Beer!Sake"
     },
     "author": "Shohei Yokoyama",
     "license": "MIT",
-    "bin":{
-      "gaslit-footprint-flickr":"./bin/execute.js"
+    "bin": {
+        "gaslit-footprint-flickr": "./bin/execute.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/abarth500/GASLiT-Footprint-Flickr"
     },
     "dependencies": {
         "async": "^2.1.2",
