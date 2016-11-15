@@ -1,8 +1,7 @@
 {
     "name": "gaslit-footprint-flickr",
     "description": "Crawling geotagged photographs from Flickr and drawing a world map.",
-    "version": "0.0.2",
-    "description": "",
+    "version": "0.0.3",
     "main": "index.js",
     "scripts": {
         "test": "node index.js -q Wisky!Wine!Beer!Sake"
