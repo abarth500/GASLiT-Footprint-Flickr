@@ -73,13 +73,41 @@ args.parse(process.argv.slice(2), function(errors, options) {
         limit = 10;
     }
     var async = require("async");
-    async.eachLimit(queries, limit, function(query, callback) {
-        require('../index.js').run(query, opt, function(outPath) {
-            console.log("[DONE] path=" + outPath);
-            callback(null);
+    var startCrawling = function() {
+        async.eachLimit(queries, limit, function(query, callback) {
+            require('../index.js').run(query, opt, function(outPath) {
+                console.log("[DONE] path=" + outPath);
+                callback(null);
+            });
+        }, function(err) {
+            console.log("[[ALL DONE]]");
+            process.exit(0);
         });
-    }, function(err) {
-        console.log("[[ALL DONE]]");
-        process.exit(0);
-    });
+    }
+    try {
+        var apiKey = require('../api-key.json');
+        startCrawling();
+    } catch (e) {
+        console.log("API KEY not found.");
+        var readline = require('readline');
+        var rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+        rl.question("Your Flickr API key? ", function(apikey) {
+            rl.question("Your Flickr API Secret? ", function(apisecret) {
+                console.log("-> SET:" + apikey + "/" + apisecret);
+                rl.close();
+                var fs = require('fs');
+                fs.writeFile("./api-key.json", JSON.stringify({
+                    "api_key": apikey,
+                    "secret": apisecret
+                }), function(err) {
+                    if (err) throw err;
+                    startCrawling();
+                    console.log("The api_key/secret was saved!");
+                });
+            });
+        });
+    }
 });
